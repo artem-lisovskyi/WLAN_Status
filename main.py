@@ -17,8 +17,9 @@ while True:
 
     # Запись значения поля "Signal" в файл
     if signal_value:
+        current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         with open(filename, "a") as f:
-            f.write(f"{signal_value}\n")
+            f.write(f"{current_time}: {signal_value}\n")
 
     # Ожидание 5 минут
     time.sleep(300)
